@@ -1,0 +1,12 @@
+{
+  "name": "모두 모여라",
+  "description": "우리의 프로젝트 코드가 궁금하신가요? 코드 저장소로 놀러 오세요 💕",
+  "image": {
+    "src": "../../images/logo.jpg",
+    "alt": "Team Logo"
+  },
+  "socialProfiles": {
+    "from": ["Github"],
+    "showIcons": true
+  }
+}
