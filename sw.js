@@ -27,24 +27,24 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-3ddcecc53d31c3eea759.js"
+    "url": "webpack-runtime-1b6e07f566b1642163bf.js"
   },
   {
     "url": "framework-f546286c4fc2427c33b6.js"
   },
   {
-    "url": "app-a1b33ce3f647bd485a60.js"
+    "url": "app-7ddd106396ca6d6003d1.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "be810588c6b965ea32075ec9d193a8e9"
+    "revision": "7c445bdc45e65b2506e0fb065d7d6d1c"
   },
   {
     "url": "polyfill-0992770ba822547ef86f.js"
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "29d5a2703c50dd322a633a56da3d2f46"
+    "revision": "30bcc8b0550d43fac54141fbb0e129d9"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -149,12 +149,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/2022-momo.github.io`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/2022-momo.github.io/app-a1b33ce3f647bd485a60.js`))) {
+  if (!resources || !(await caches.match(`/app-7ddd106396ca6d6003d1.js`))) {
     return await fetch(event.request)
   }
 
@@ -167,7 +167,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/2022-momo.github.io/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })

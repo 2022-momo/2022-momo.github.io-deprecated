@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://gatsby-starter-portfolio-minimal-theme.netlify.app/2022-momo.github.io/sitemap/sitemap-index.xml
+Sitemap: https://gatsby-starter-portfolio-minimal-theme.netlify.app/sitemap/sitemap-index.xml
 Host: https://gatsby-starter-portfolio-minimal-theme.netlify.app
