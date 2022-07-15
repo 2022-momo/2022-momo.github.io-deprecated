@@ -1,50 +1,110 @@
-<img src="screenshot.png" alt="Gatsby Theme Portfolio Minimal Screenshot" width="700" />
+# 모모 팀 기술 블로그
 
-# Gatsby Starter Portfolio Minimal Theme
+모모 팀 기술 블로그 레포지토리입니다.
+`node`와 `react`를 기반으로 한 `gatsby` 블로그 테마를 통해 생성되었습니다.
 
-#### A Gatsby Starter Project to easily get started with the Portfolio Minimal Theme.
+일반적인 노드 프로젝트를 관리하는 것처럼 사용하시면 됩니다.
 
-Portfolio Minimal is a Gatsby Theme that let's you create outstanding one-page portfolios within minutes. This Gatsby Starter is a boilerplate project that has the theme pre-installed and pre-configured.
+# 시작하기
 
-Just clone this Gatsby Starter, add the content. And that's it!
+## 노드 설치하기
 
-[Live Demo on Netlify](https://gatsby-starter-portfolio-minimal-theme.netlify.app/) · [Portfolio Minimal Theme on Github](https://github.com/konstantinmuenster/gatsby-theme-portfolio-minimal)
+이 블로그는 노드 프로젝트로 생성되었기 때문에 개발자의 PC에 `Node.js`의 설치가 먼저 필요합니다.
 
+아래 과정에 따라 노드를 설치해주시고, 이미 PC에 설치되어 있다면 다음 단계로 넘어가주세요.
+
+[다운로드 링크](https://nodejs.org/ko/download/)에 접속하신 후, 개인의 운영체제에 맞는 인스톨러를 선택해 노드를 설치해주세요.
+
+설치 할 버젼은 16버젼 이상이라면 모두 괜찮지만, 되도록이면 최신 버젼의 LTS를 선택하시길 권장합니다. 가장 안정적인 버젼입니다.
+
+## 프로젝트 명령어
+
+### 1. 레포지토리 클론
+
+개발자의 PC에 노드가 설치되어있다면, 프로젝트를 클론해주세요.
+
+```
+git clone https://github.com/2022-momo/2022-momo.github.io.git
+```
+
+클론이 완료되었다면, `package.json` 파일이 있는 경로로 이동해주세요. 노드 프로젝트에서 이 파일은 의존성을 관리하는 역할을 합니다. 완벽하지는 않지만 `build.gradle`과 얼추 비슷하다고 생각하시면 됩니다.
+
+### 2. 의존성 설치
+
+다음 명령어를 통해 프로젝트에 의존성들을 설치합니다.
+
+```
+npm i
+```
+
+이때 설치된 외부 라이브러리들은 `.node_modules` 디렉토리에 저장됩니다.
+
+### 3. 프로젝트 관리 하기
+
+의존성 설치가 완료되었다면 프로젝트를 시작할 준비가 끝났습니다.
+이제부터 몇 가지 명령어를 통해 프로젝트를 돌려보거나 빌드, 또는 배포를 할 수 있습니다.
+
+- **개발서버에서 실행시켜 보기**
+
+```
+npm run develop
+```
+
+develop 명령어를 통해 로컬 환경에서 개발모드로 실행할 수 있습니다.
+실행된 프로젝트는 `localhost:8000` 에서 확인할 수 있습니다.
+
+- **프로젝트 빌드하기**
+
+```
+npm run build
+```
+
+build 명령어를 통해 프로젝트를 정적인 파일로 빌드할 수 있습니다.
+빌드 결과물들은 이후 배포에 사용됩니다.
+
+- **프로젝트 배포하기**
+
+### 주의! 이 명령어를 입력하면 자동으로 프로젝트가 빌드 및 배포됩니다.
+
+되돌리기 어려운 작업이니 모든 작업을 마치고, 이 상태로 배포되어도 괜찮은지 반드시 확인한 후 실행해주시기 바랍니다.
+
+```
+npm run deploy
+```
+
+**4. 블로그 포스트 작성**
+
+정해진 형식에 맞춰 포스트를 작성해주세요.
+
+포스트는 `content/articles` 디렉토리에 위치해야 합니다.
+
+1. 먼저 포스트의 제목을 이름으로 하는 폴더를 생성해주세요.
+
+   - 공백이 들어가는 경우 하이픈 (-) 으로 대체해주세요. ex) `첫 글` => `첫-글`
+
+2. 포스트의 최상단에 포스트의 정보를 입력해주세요. 정보는 아래의 형식을 따릅니다.
+
+```
 ---
-
-## Installation
-
-1. Install the Gatsby CLI
-
-   ```sh
-   npm install -g gatsby-cli
-   ```
-
-2. Create a new Gatsby site with the Portfolio Minimal Starter.
-
-   ```sh
-   gatsby new portfolio-minimal https://github.com/konstantinmuenster/gatsby-starter-portfolio-minimal-theme
-   ```
-
-3. Once installed, you can begin developing your site.
-
-   ```sh
-   cd portfolio-minimal
-   gatsby develop
-   ```
-
-4. By default, the Portfolio Minimal Starter has a `content` directory at the root of your Gatsby site. There, you can edit the theme settings as well as add content for your sections. To learn more about it, have a look at the [Readme of Portfolio Minimal](https://github.com/konstantinmuenster/gatsby-theme-portfolio-minimal/tree/main/gatsby-theme-portfolio-minimal#readme).
-
+title: "글 제목"
+description: "글에 대한 설명. 검색엔진에 노출되는 부분입니다."
+date: "2021-07-09" // YYYY-MM-DD 형식으로 작성해주세요.
+banner:
+  src: "../../images/logo.jpg" // 썸네일+글의 최상단에 표시될 이미지입니다.
+  alt: "First Markdown Post" // 이미지에 대한 대체 텍스트입니다. 간접적으로 표시되니 이미지에 대한 설명을 쓰시면 됩니다.
+  caption: "Logo by <u>Hari</u>" // 직접적으로 표시되는 이미지 설명입니다. <u>는 밑줄태그입니다.
+categories:
+  - "Hello" // 글의 카테고리입니다. 여러개를 추가할 수 있습니다.
+keywords:
+  - "Example" // 키워드입니다. 태그라고 생각해주세요.
 ---
+```
 
-## Issues?
+이 아래에는 마크다운 문법을 이용해 작성해주시면 됩니다.
 
-If you find any bugs or have feature suggestions, create a new issue or pull request 🙏
+3.  작성이 끝났다면 PR을 날려주세요.
 
-Thanks a lot for using this starter! 💪
+- `개인 브랜치` -> `develop`
+- PR이 적당히 approve를 받으면 merge와 함께 배포해주세요.
 
----
-
-<a href="https://www.buymeacoffee.com/kmuenster" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
-
-Konstantin Münster – [konstantin.digital](https://konstantin.digital)
+### 끗
